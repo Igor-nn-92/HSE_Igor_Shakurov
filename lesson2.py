@@ -1,5 +1,3 @@
-# lesson2.py
-
 from lesson_2_data import respondents as defendants_data
 
 COURTS = [
