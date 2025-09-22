@@ -2,7 +2,6 @@
 
 from lesson_2_data import respondents as defendants_data
 
-# Встроенный список арбитражных судов (кириллическая "А" в кодах)
 COURTS = [
     {"code": "А33", "name": "Арбитражный суд Красноярского края",    "address": "660000, г. Красноярск, ул. Мира, д. 76"},
     {"code": "А40", "name": "Арбитражный суд города Москвы",        "address": "115225, г. Москва, ул. Большая Тульская, д. 17"},
@@ -33,7 +32,6 @@ def get_court_by_code(code: str) -> dict:
     for court in COURTS:
         if court["code"] == code:
             return court
-    # Если код не найден, возвращаем заглушку
     return {"name": f"Н/Д (код {code})", "address": "Адрес не найден"}
 
 def generate_header(defendant: dict, plaintiff: dict, case_number: str) -> str:
@@ -66,4 +64,4 @@ if __name__ == "__main__":
         "ogrnip": "304440000123456",
         "address": "603000, г. Нижний Новгород, ул. Примерная, д. 1"
     }
-    generate_all_headers(defendants_data, plaintiff_data)
+generate_all_headers(defendants_data, plaintiff_data)
