@@ -6,7 +6,6 @@ from pathlib import Path
 from datetime import datetime, timedelta
 from decimal import Decimal
 
-
 class ParserCBRF:
     def __init__(self, start_date=None, end_date=None, currencies=None):
         self.start_date = start_date
@@ -167,7 +166,6 @@ class ParserCBRF:
             print(f"{currency}: {len(data)} записей")
         return results
 
-
 class CurrencyRateCBRF:
     def __init__(self, currency_code, data_file=None):
         self.currency_code = currency_code.upper()
@@ -251,8 +249,6 @@ class CurrencyRateCBRF:
 
 
 if __name__ == "__main__":
-    print("ПРИМЕР 1: СБОР ДАННЫХ")
-    print("="*70)
 
     parser = ParserCBRF(
         start_date='07.04.2022',
@@ -260,10 +256,6 @@ if __name__ == "__main__":
         currencies=['USD', 'EUR', "CNY"]
     )
     results = parser.start()
-
-    print("\n\nПРИМЕР 2: РАБОТА С ДАННЫМИ")
-    print("="*70)
-
     usd = CurrencyRateCBRF('USD')
 
     print(f"\nКурс на 2022-04-07: {usd.rate_by_date('2022-04-07')}")
